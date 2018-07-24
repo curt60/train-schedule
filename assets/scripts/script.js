@@ -28,7 +28,7 @@ $("button").on("click", function () {
 
     //validate inputs
     /* Need to fix */
-    if (false) {
+    if (trainName == "" || destination == "" || frequency == "") {
         alert("All fields are requred");
         return;
     }
@@ -73,7 +73,7 @@ function calculateTimes(firstTrain, frequency) {
 
         //if next train is tomorrow
         if (moment().diff(moment(nextArrival, "HH:mm")) > 0) {
-            nextArrival = data.firstTrain + " (T)";
+            nextArrival = firstTrain + " (T)";
             minsAway = (60 * 24) + firstTrainMoment.diff(moment(), "minutes");
         }
     }
